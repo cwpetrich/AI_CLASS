@@ -184,6 +184,15 @@
  /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Scavenger/ScavengerEnvironmentDisplay3D.h \
  /usr/include/c++/4.9/mutex /usr/include/c++/4.9/system_error \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/error_constants.h \
- /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h \
+ /usr/include/c++/4.9/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_val.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
+ /usr/include/x86_64-linux-gnu/bits/inf.h \
+ /usr/include/x86_64-linux-gnu/bits/nan.h \
+ /usr/include/x86_64-linux-gnu/bits/mathdef.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathinline.h
 00obj-o/cwpSecretAgent.o:
 	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/cwpSecretAgent.cpp -o $@
