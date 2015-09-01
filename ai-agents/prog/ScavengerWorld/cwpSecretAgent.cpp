@@ -32,26 +32,26 @@ namespace cwp
       std::stringstream ss;
       
       double agent_x, agent_y, agent_z;
-      ss.str(ai::Agent::GetAtom("X_LOC").GetValue()); ss.clear();
+      ss.str(percept->GetAtom("X_LOC").GetValue()); ss.clear();
       ss >> agent_x;
-      ss.str(ai::Agent::GetAtom("Y_LOC").GetValue()); ss.clear();
+      ss.str(percept->GetAtom("Y_LOC").GetValue()); ss.clear();
       ss >> agent_y;
-      ss.str(ai::Agent::GetAtom("Z_LOC").GetValue()); ss.clear();
+      ss.str(percept->GetAtom("Z_LOC").GetValue()); ss.clear();
       ss >> agent_z;
 
-      for (int i = 0; i < ai::Agent::NumAtom(); i++){
+      for (uint i = 0; i < percept->NumAtom(); i++){
         double cell_x, cell_y, cell_z;
-        std::string value = percept->GetValue(i);
+        std::string value = percept->GetAtom(i).GetValue();
         ss.str(value); ss.clear();
         ss >> cell_x; ss.ignore();
         ss >> cell_y; ss.ignore();
         ss >> cell_z; ss.ignore();
 
         std::string cell_north, cell_south, cell_east, cell_west;
-        std::getline(ss, cell_north, ",");
-        std::getline(ss, cell_south, ",");
-        std::getline(ss, cell_east, ",");
-        std::getline(ss, cell_west, ",");
+        std::getline(ss, cell_north, ',');
+        std::getline(ss, cell_south, ',');
+        std::getline(ss, cell_east, ',');
+        std::getline(ss, cell_west, ',');
 
         if (fabs(agent_x - cell_x) < 0.00001 && fabs(agent_y - cell_y) < 0.00001 && fabs(agent_z - cell_z) < 0.00001){
           if (cell_north == "plain" || cell_north == "mud"){
