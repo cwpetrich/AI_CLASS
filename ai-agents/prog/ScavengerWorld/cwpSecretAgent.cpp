@@ -62,6 +62,8 @@ namespace cwp
             action->SetCode(ai::Scavenger::Action::GO_WEST);
           }else if (cell_south == "plain" || cell_south == "mud"){
             action->SetCode(ai::Scavenger::Action::GO_SOUTH);
+          }else{
+            action->SetCode(ai:Scavenger::Action::QUIT);
           }
         }        
       }
