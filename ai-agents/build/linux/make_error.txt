@@ -1,0 +1,92 @@
+Configuring the location of your directory tree
+Checking your installed development packages
+(cd prog; make install)
+make[1]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog'
+for d in utils WumpusWorld TicTacToe Candy CCheckers Mancala ScavengerWorld; do \
+	(cd $d; make install) \
+done
+make[2]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/utils'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/utils'
+make[2]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/WumpusWorld'
+for d in WumpusAgent RUN_Wumpus; do \
+	make -k -j 8 -f Makefile.$d install ; \
+done
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/WumpusWorld'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/WumpusWorld'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/WumpusWorld'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/WumpusWorld'
+make[2]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/WumpusWorld'
+make[2]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/TicTacToe'
+for d in TicTacToeAgent RUN_TicTacToe; do \
+	make -k -j 8 -f Makefile.$d install ; \
+done
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/TicTacToe'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/TicTacToe'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/TicTacToe'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/TicTacToe'
+make[2]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/TicTacToe'
+make[2]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Candy'
+for d in CandyAgent RUN_Candy; do \
+	make -k -j 8 -f Makefile.$d install ; \
+done
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Candy'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Candy'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Candy'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Candy'
+make[2]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Candy'
+make[2]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/CCheckers'
+for d in CCheckersAgent RUN_CCheckers; do \
+	make -k -j 8 -f Makefile.$d install ; \
+done
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/CCheckers'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/CCheckers'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/CCheckers'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/CCheckers'
+make[2]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/CCheckers'
+make[2]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Mancala'
+for d in MancalaAgent RUN_Mancala; do \
+	make -k -j 8 -f Makefile.$d install ; \
+done
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Mancala'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Mancala'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Mancala'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Mancala'
+make[2]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/Mancala'
+make[2]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+for d in ScavengerAgent Genesis RUN_Scavenger_Search RUN_Scavenger_Online RUN_Scavenger_Learning; do \
+	make -k -j 8 -f Makefile.$d install ; \
+done
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+building .depend-o.cwpSecretAgent.d
+building .depend-o.AgentProgramSelect.d
+building .depend-o.cwpSecretAgentModel.d
+g++ -I/home/conrad/Desktop/CS4300/aicode/ai/include              -Wall -Werror -DUSE_GLUT  -O2 -std=c++11 -DDEBUG_LEVEL=4 -c /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/AgentProgramSelect.cpp -o 00obj-o/AgentProgramSelect.o
+g++ -I/home/conrad/Desktop/CS4300/aicode/ai/include              -Wall -Werror -DUSE_GLUT  -O2 -std=c++11 -DDEBUG_LEVEL=4 -c /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgent.cpp -o 00obj-o/cwpSecretAgent.o
+g++ -I/home/conrad/Desktop/CS4300/aicode/ai/include              -Wall -Werror -DUSE_GLUT  -O2 -std=c++11 -DDEBUG_LEVEL=4 -c /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgentModel.cpp -o 00obj-o/cwpSecretAgentModel.o
+.depend-o.cwpSecretAgent.d:199: recipe for target '00obj-o/cwpSecretAgent.o' failed
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Entering directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[2]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog/ScavengerWorld'
+make[1]: Leaving directory '/home/conrad/Desktop/CS4300/aicode/ai-agents/build/linux/prog'

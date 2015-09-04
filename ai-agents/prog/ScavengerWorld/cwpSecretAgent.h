@@ -2,6 +2,7 @@
 #define _SECRETAGENT_H_
 
 #include <ai_scavenger.h>
+#include "cwpSecretAgentModel.h"
 
 namespace cwp
 {
@@ -15,6 +16,7 @@ namespace cwp
       virtual ai::Agent::Action * Program(const ai::Agent::Percept * percept);
     protected:
     private:
+      cwp::Scavenger::SecretAgentModel* model;
     };
   }
 }

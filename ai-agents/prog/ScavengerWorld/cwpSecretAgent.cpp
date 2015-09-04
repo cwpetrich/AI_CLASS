@@ -20,40 +20,78 @@ namespace cwp
     {
       SetName("SecretAgent");
       std::cout << "The value of the -U option is: " << opts->GetArgInt("user1") << std::endl;
+      this->model = new cwp::Scavenger::SecretAgentModel;
     }
 
     SecretAgent::~SecretAgent()
     {
+      delete(model);
     }
 
     ai::Agent::Action * SecretAgent::Program(const ai::Agent::Percept * percept)
     {
       ai::Scavenger::Action *action = new ai::Scavenger::Action;
       std::stringstream ss;
-      
-      double agent_x, agent_y, agent_z;
+
+      double cell_x, cell_y, cell_z;
+      std::string cell_north, cell_south, cell_east, cell_west;
+
+      int agent_base;
+      double agent_x, agent_y, agent_z, agent_hp, agent_charge, agent_goal_x, agent_goal_y, agent_goal_z;
+
+      ss.str(percept->GetAtom("BASE").GetValue()); ss.clear();
+      ss >> agent_base;
+      model->updateBaseNum(agent_base);
       ss.str(percept->GetAtom("X_LOC").GetValue()); ss.clear();
       ss >> agent_x;
       ss.str(percept->GetAtom("Y_LOC").GetValue()); ss.clear();
       ss >> agent_y;
       ss.str(percept->GetAtom("Z_LOC").GetValue()); ss.clear();
       ss >> agent_z;
+      model->updateCurrLocation(agent_x, agent_y, agent_z);
+
+      ss.str(percept->GetAtom("CHARGE").GetValue()); ss.clear();
+      ss >> agent_charge;
+      model->updateCharge(agent_charge);
+      ss.str(percept->GetAtom("HP").GetValue()); ss.clear();
+      ss >> agent_hp;
+      model->updateHitPoints(agent_hp);
+
+      std::string agent_goal_loc = percept->GetAtom("GOAL_LOC").GetValue();
+      ss.str(agent_goal_loc); ss.clear();
+      ss >> agent_goal_x; ss.ignore();
+      ss >> agent_goal_y; ss.ignore();
+      ss >> agent_goal_z; ss.ignore();
+
 
       for (uint i = 0; i < percept->NumAtom(); i++){
-        double cell_x, cell_y, cell_z;
-        std::string value = percept->GetAtom(i).GetValue();
-        ss.str(value); ss.clear();
-        ss >> cell_x; ss.ignore();
-        ss >> cell_y; ss.ignore();
-        ss >> cell_z; ss.ignore();
+        if (percept->GetAtom(i).GetName().substr(0, 5) == "CELL_"){
+		      cwp::Scavenger::CellData* cell = new cwp::Scavenger::CellData;
+		      cell->id = percept->GetAtom(i).GetName().substr(5);
 
-        std::string cell_north, cell_south, cell_east, cell_west;
-        std::getline(ss, cell_north, ',');
-        std::getline(ss, cell_south, ',');
-        std::getline(ss, cell_east, ',');
-        std::getline(ss, cell_west, ',');
+        	std::string value = percept->GetAtom(i).GetValue();
+	        ss.str(value); ss.clear();
 
-        if (fabs(agent_x - cell_x) < 0.00001 && fabs(agent_y - cell_y) < 0.00001 && fabs(agent_z - cell_z) < 0.00001){
+	        ss >> cell_x; ss.ignore();
+	        ss >> cell_y; ss.ignore();
+	        ss >> cell_z; ss.ignore();
+	        cell->loc_x = cell_x;
+	        cell->loc_y = cell_y;
+	        cell->loc_z = cell_z;
+
+
+	        std::getline(ss, cell_north, ',');
+	        std::getline(ss, cell_south, ',');
+	        std::getline(ss, cell_east, ',');
+	        std::getline(ss, cell_west, ',');
+
+	        model->addCell(cell);
+
+        }
+
+        std::vector<double> curr_location = model->getCurrLocation();
+
+        if (fabs(curr_location[0] - cell_x) < 0.00001 && fabs(curr_location[1] - cell_y) < 0.00001 && fabs(curr_location[2] - cell_z) < 0.00001){
           if (cell_north == "plain" || cell_north == "mud"){
             action->SetCode(ai::Scavenger::Action::GO_NORTH);
           }else if (cell_east == "plain" || cell_east == "mud"){
@@ -63,7 +101,7 @@ namespace cwp
           }else if (cell_south == "plain" || cell_south == "mud"){
             action->SetCode(ai::Scavenger::Action::GO_SOUTH);
           }else{
-            action->SetCode(ai:Scavenger::Action::QUIT);
+            action->SetCode(ai::Scavenger::Action::QUIT);
           }
         }        
       }

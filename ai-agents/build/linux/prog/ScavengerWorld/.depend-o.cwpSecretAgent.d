@@ -185,6 +185,7 @@
  /usr/include/c++/4.9/mutex /usr/include/c++/4.9/system_error \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/error_constants.h \
  /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h \
+ /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgentModel.h \
  /usr/include/c++/4.9/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
