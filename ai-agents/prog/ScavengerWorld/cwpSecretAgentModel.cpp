@@ -14,12 +14,34 @@ namespace cwp {
 			curr_z = z;
 		}
 
-		std::vector<double> SecretAgentModel::getCurrLocation() {
-			std::vector<double> curr_location;
-			curr_location.push_back(curr_x);
-			curr_location.push_back(curr_y);
-			curr_location.push_back(curr_z);
-			return curr_location;
+		double SecretAgentModel::getCurrX(){
+			return curr_x;
+		}
+
+		double SecretAgentModel::getCurrY(){
+			return curr_y;
+		}
+
+		double SecretAgentModel::getCurrZ(){
+			return curr_z;
+		}
+
+		void SecretAgentModel::updateGoalLocation(double x, double y, double z){
+			goal_x = x;
+			goal_y = y;
+			goal_z = z;
+		}
+
+		double SecretAgentModel::getGoalX(){
+			return goal_x;
+		}
+
+		double SecretAgentModel::getGoalY(){
+			return goal_y;
+		}
+
+		double SecretAgentModel::getGoalZ(){
+			return goal_z;
 		}
 
 		void SecretAgentModel::addCell(CellData *cell){
@@ -49,6 +71,72 @@ namespace cwp {
 		int SecretAgentModel::getBaseNum(){
 			return base_num;
 		}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+		CellData::CellData(){}
+
+		void CellData::updateId(std::string new_id){
+			this->id = new_id;
+		}
+		std::string CellData::getId(){
+			return id;
+		}
+		void CellData::updateCellLocation(double x, double y, double z){
+			this->loc_x = x;
+			this->loc_y = y;
+			this->loc_z = z;
+		}
+		void CellData::updateLocX(double x){
+			this->loc_x = x;
+		}
+		void CellData::updateLocY(double y){
+			this->loc_y = y;
+		}
+		void CellData::updateLocZ(double z){
+			this->loc_z = z;
+		}
+		double CellData::getLocX(){
+			return loc_x;
+		}
+		double CellData::getLocY(){
+			return loc_y;
+		}
+		double CellData::getLocZ(){
+			return loc_z;
+		}
+		void CellData::updateCellInterfaces(std::string n, std::string s, std::string e, std::string w){
+			this->north = n;
+			this->south = s;
+			this->east = e;
+			this->west = w;
+		}
+		void CellData::updateCellNorth(std::string n){
+			this->north = n;
+		}
+		void CellData::updateCellSouth(std::string s){
+			this->south = s;
+		}
+		void CellData::updateCellEast(std::string e){
+			this->east = e;
+		}
+		void CellData::updateCellWest(std::string w){
+			this->west = w;
+		}
+		std::string CellData::getCellNorth(){
+			return north;
+		}
+		std::string CellData::getCellSouth(){
+			return south;
+		}
+		std::string CellData::getCellEast(){
+			return east;
+		}
+		std::string CellData::getCellWest(){
+			return west;
+		}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 		// CellKey::CellKey(double x, double y){
 		// 	this->x = x;

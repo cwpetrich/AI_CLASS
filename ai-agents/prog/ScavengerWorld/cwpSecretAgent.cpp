@@ -67,7 +67,7 @@ namespace cwp
       for (uint i = 0; i < percept->NumAtom(); i++){
         if (percept->GetAtom(i).GetName().substr(0, 5) == "CELL_"){
 		      cwp::Scavenger::CellData* cell = new cwp::Scavenger::CellData;
-		      cell->id = percept->GetAtom(i).GetName().substr(5);
+		      cell->updateId(percept->GetAtom(i).GetName().substr(5));
 
         	std::string value = percept->GetAtom(i).GetValue();
 	        ss.str(value); ss.clear();
@@ -75,30 +75,31 @@ namespace cwp
 	        ss >> cell_x; ss.ignore();
 	        ss >> cell_y; ss.ignore();
 	        ss >> cell_z; ss.ignore();
-	        cell->loc_x = cell_x;
-	        cell->loc_y = cell_y;
-	        cell->loc_z = cell_z;
-
+	        cell->updateCellLocation(cell_x, cell_y, cell_z);
 
 	        std::getline(ss, cell_north, ',');
 	        std::getline(ss, cell_south, ',');
 	        std::getline(ss, cell_east, ',');
 	        std::getline(ss, cell_west, ',');
+	        cell->updateCellInterfaces(cell_north, cell_south, cell_east, cell_west);
 
 	        model->addCell(cell);
 
         }
+      }
 
-        std::vector<double> curr_location = model->getCurrLocation();
+      std::vector<cwp::Scavenger::CellData*> cells = model->getCells();
 
-        if (fabs(curr_location[0] - cell_x) < 0.00001 && fabs(curr_location[1] - cell_y) < 0.00001 && fabs(curr_location[2] - cell_z) < 0.00001){
-          if (cell_north == "plain" || cell_north == "mud"){
+      for (uint i = 0; i < cells.size(); i++){
+
+        if (fabs(model->getCurrX() - cells[i]->getLocX()) < 0.00001 && fabs(model->getCurrY() - cells[i]->getLocY()) < 0.00001 && fabs(model->getCurrZ() - cells[i]->getLocZ()) < 0.00001){
+          if (cells[i]->getCellNorth() == "plain" || cells[i]->getCellNorth() == "mud"){
             action->SetCode(ai::Scavenger::Action::GO_NORTH);
-          }else if (cell_east == "plain" || cell_east == "mud"){
+          }else if (cells[i]->getCellEast() == "plain" || cells[i]->getCellEast() == "mud"){
             action->SetCode(ai::Scavenger::Action::GO_EAST);
-          }else if (cell_west == "plain" || cell_west == "mud"){
+          }else if (cells[i]->getCellWest() == "plain" || cells[i]->getCellWest() == "mud"){
             action->SetCode(ai::Scavenger::Action::GO_WEST);
-          }else if (cell_south == "plain" || cell_south == "mud"){
+          }else if (cells[i]->getCellSouth() == "plain" || cells[i]->getCellSouth() == "mud"){
             action->SetCode(ai::Scavenger::Action::GO_SOUTH);
           }else{
             action->SetCode(ai::Scavenger::Action::QUIT);
