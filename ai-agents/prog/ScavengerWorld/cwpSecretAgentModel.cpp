@@ -138,34 +138,50 @@ namespace cwp {
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-		// CellKey::CellKey(double x, double y){
-		// 	this->x = x;
-		// 	this->y = y;
-		// }
+		CellKey::CellKey(double x, double y){
+			this->x = x;
+			this->y = y;
+		}
 
-		// double CellKey::getX(){
-		// 	return this->x;
-		// }
+		void CellKey::updateX(double x){
+			this->x = x;
+		}
 
-		// double CellKey::getY(){
-		// 	return this->y;
-		// }
+		void CellKey::updateY(double y){
+			this->y = y;
+		}
 
-		// std::ostream & operator<(CellKey &lkey, CellKey &rkey){
-		// 	if ((lkey->getX() < rkey->getX() && fabs(lkey->getY() - rkey->getY()) < 0.00001) || (lkey->getX() < rkey->getX() && lkey->getY() < rkey->getY())){
+		double CellKey::getX(){
+			return x;
+		}
+
+		double CellKey::getY(){
+			return y;
+		}
+
+		bool operator==(CellKey &lkey, CellKey &rkey){
+			if (fabs(lkey.getX() - rkey.getX()) < 0.00001 && fabs(lkey.getY() - rkey.getY()) < 0.00001){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		// bool operator<=(CellKey &lkey, CellKey &rkey){
+		// 	if ((fabs(lkey.getX() - rkey.getX()) < 0.00001 && fabs(lkey.getY() - rkey.getY()) < 0.00001) || ((lkey.getX() < rkey.getX() && fabs(lkey.getY() - rkey.getY()) < 0.00001) || (lkey.getX() < rkey.getX() && lkey.getY() < rkey.getY()))) {
 		// 		return true;
 		// 	}else{
 		// 		return false;
 		// 	}
 		// }
 
-		// std::ostream & operator==(CellKey &lkey, CellKey &rkey){
-		// 	if (fabs(lkey->getX() - rkey->getX()) < 0.00001 && fabs(lkey->getY() - rkey->getY()) < 0.00001){
-		// 		return true;
-		// 	}else{
-		// 		return false;
-		// 	}
-		// }
+		bool operator<(CellKey &lkey, CellKey &rkey){
+			if ((lkey.getX() < rkey.getX() && fabs(lkey.getY() - rkey.getY()) < 0.00001) || (lkey.getX() < rkey.getX() && lkey.getY() < rkey.getY())){
+				return true;
+			}else{
+				return false;
+			}
+		}
 
 	}
 }

@@ -68,13 +68,17 @@ namespace cwp {
 		class CellKey {
 		public:
 			CellKey(double x, double y);
-
+			void updateX(double x);
+			void updateY(double y);
+			double getX();
+			double getY();
 		private:
 			double x, y;
 		};
 
-		std::ostream & operator==(CellKey &lkey, CellKey &rkey);
-		std::ostream & operator<(CellKey &lkey, CellKey &rkey);
-
+		bool operator==(CellKey &lkey, CellKey &rkey);
+		// bool operator<=(CellKey &lkey, CellKey &rkey);
+		bool operator<(CellKey &lkey, CellKey &rkey);
+		
 	}
 }
