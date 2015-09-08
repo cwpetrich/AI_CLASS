@@ -1,4 +1,4 @@
-00obj-o/cwpSecretAgentModel.o .depend-o.cwpSecretAgentModel.d :  \
+00obj/cwpSecretAgentModel.o .depend.cwpSecretAgentModel.d :  \
  /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgentModel.cpp \
  /usr/include/stdc-predef.h \
  /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgentModel.h \
@@ -50,7 +50,6 @@
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathinline.h \
  /usr/include/c++/4.9/cstdio /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -59,15 +58,12 @@
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/4.9/cstring \
- /usr/include/string.h /usr/include/xlocale.h \
- /usr/include/x86_64-linux-gnu/bits/string3.h /usr/include/c++/4.9/string \
+ /usr/include/c++/4.9/cstring /usr/include/string.h \
+ /usr/include/xlocale.h /usr/include/c++/4.9/string \
  /usr/include/c++/4.9/bits/stringfwd.h \
  /usr/include/c++/4.9/bits/char_traits.h \
  /usr/include/c++/4.9/bits/postypes.h /usr/include/c++/4.9/cwchar \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/c++/4.9/cstdint \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/c++/4.9/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
  /usr/include/c++/4.9/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++locale.h \
@@ -100,13 +96,11 @@
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/sigset.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/c++/4.9/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/c++/4.9/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.9/bits/basic_string.tcc /usr/include/c++/4.9/map \
  /usr/include/c++/4.9/bits/stl_tree.h \
@@ -115,25 +109,6 @@
  /usr/include/c++/4.9/utility /usr/include/c++/4.9/bits/stl_relops.h \
  /usr/include/c++/4.9/array /usr/include/c++/4.9/stdexcept \
  /usr/include/c++/4.9/bits/uses_allocator.h \
- /usr/include/c++/4.9/bits/stl_multimap.h /usr/include/c++/4.9/iostream \
- /usr/include/c++/4.9/ostream /usr/include/c++/4.9/ios \
- /usr/include/c++/4.9/bits/ios_base.h \
- /usr/include/c++/4.9/bits/locale_classes.h \
- /usr/include/c++/4.9/bits/locale_classes.tcc \
- /usr/include/c++/4.9/streambuf /usr/include/c++/4.9/bits/streambuf.tcc \
- /usr/include/c++/4.9/bits/basic_ios.h \
- /usr/include/c++/4.9/bits/locale_facets.h /usr/include/c++/4.9/cwctype \
- /usr/include/wctype.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_base.h \
- /usr/include/c++/4.9/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_inline.h \
- /usr/include/c++/4.9/bits/locale_facets.tcc \
- /usr/include/c++/4.9/bits/basic_ios.tcc \
- /usr/include/c++/4.9/bits/ostream.tcc /usr/include/c++/4.9/istream \
- /usr/include/c++/4.9/bits/istream.tcc /usr/include/c++/4.9/fstream \
- /usr/include/c++/4.9/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++io.h \
- /usr/include/c++/4.9/bits/fstream.tcc
-00obj-o/cwpSecretAgentModel.o:
+ /usr/include/c++/4.9/bits/stl_multimap.h
+00obj/cwpSecretAgentModel.o:
 	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/cwpSecretAgentModel.cpp -o $@

@@ -1,4 +1,6 @@
 #include "cwpSecretAgentModel.h"
+#include <iostream>
+#include <fstream>
 
 namespace cwp {
 
@@ -44,13 +46,33 @@ namespace cwp {
 			return goal_z;
 		}
 
-		void SecretAgentModel::addCell(CellData *cell){
-			// CellKey* key = new CellKey(cell->loc_x, cell->loc_y);
-			known_cells.push_back(cell);
+		// std::map<CellKey*, CellData*> SecretAgentModel::getCells(){
+		// 	return known_cells;
+		// }
+
+		CellData* SecretAgentModel::getCell(double x, double y){
+			std::ofstream myfile;
+			myfile.open("debugging.txt", std::ofstream::out | std::ofstream::app);
+			myfile << "ParamX: " << x << "\n";
+			myfile << "ParamY: " << y << "\n";
+			CellData* cell = new CellData();
+			CellKey key = CellKey(x, y);
+			cell = known_cells[key];
+			myfile << "CellID: " << cell->getId() << "\n";
+			myfile << "XfromMap: " << cell->getLocX() << "\n";
+			myfile << "YfromMap: " << cell->getLocY() << "\n\n";
+			myfile.close();
+			return cell;
 		}
 
-		std::vector<CellData*> SecretAgentModel::getCells(){
-			return known_cells;
+		void SecretAgentModel::updateCell(std::string id, double x, double y, double z, std::string north, std::string south, std::string east, std::string west){
+			CellData* cell = new CellData();
+			CellKey key = CellKey(x, y);
+			std::pair<std::map<CellKey, CellData*>::iterator, bool> existing_cell;
+			existing_cell = known_cells.insert(std::pair<CellKey, CellData*>(key, cell));
+			existing_cell.first->second->updateId(id);
+			existing_cell.first->second->updateCellLocation(x, y, z);
+			existing_cell.first->second->updateCellInterfaces(north, south, east, west);
 		}
 
 		void SecretAgentModel::updateCharge(double c){
@@ -159,7 +181,7 @@ namespace cwp {
 			return y;
 		}
 
-		bool operator==(CellKey &lkey, CellKey &rkey){
+		bool operator==(CellKey lkey, CellKey rkey){
 			if (fabs(lkey.getX() - rkey.getX()) < 0.00001 && fabs(lkey.getY() - rkey.getY()) < 0.00001){
 				return true;
 			}else{
@@ -167,16 +189,16 @@ namespace cwp {
 			}
 		}
 
-		// bool operator<=(CellKey &lkey, CellKey &rkey){
-		// 	if ((fabs(lkey.getX() - rkey.getX()) < 0.00001 && fabs(lkey.getY() - rkey.getY()) < 0.00001) || ((lkey.getX() < rkey.getX() && fabs(lkey.getY() - rkey.getY()) < 0.00001) || (lkey.getX() < rkey.getX() && lkey.getY() < rkey.getY()))) {
-		// 		return true;
-		// 	}else{
-		// 		return false;
-		// 	}
-		// }
+		bool operator<(CellKey lkey, CellKey rkey){
+			if (lkey.getY() < rkey.getY() || (lkey.getX() < rkey.getX() && (fabs(lkey.getY() - rkey.getY()) < 0.00001))) {
+				return true;
+			}else{
+				return false;
+			}
+		}
 
-		bool operator<(CellKey &lkey, CellKey &rkey){
-			if ((lkey.getX() < rkey.getX() && fabs(lkey.getY() - rkey.getY()) < 0.00001) || (lkey.getX() < rkey.getX() && lkey.getY() < rkey.getY())){
+		bool operator>=(CellKey lkey, CellKey rkey){
+			if (((fabs(lkey.getX() - rkey.getX()) < 0.000001) && (fabs(lkey.getY() - rkey.getY()) < 0.00001)) ||  rkey.getY() < lkey.getY() || (rkey.getX() < lkey.getX() && (fabs(lkey.getY() - rkey.getY()) < 0.00001))) {
 				return true;
 			}else{
 				return false;

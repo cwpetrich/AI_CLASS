@@ -1,7 +1,7 @@
-00obj-o/cwpSecretAgent.o .depend-o.cwpSecretAgent.d :  \
- /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgent.cpp \
+00obj/Manual.o .depend.Manual.d :  \
+ /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/Manual.cpp \
  /usr/include/stdc-predef.h \
- /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgent.h \
+ /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/Manual.h \
  /home/conrad/Desktop/CS4300/aicode/ai/include/ai_scavenger.h \
  /usr/include/c++/4.9/string \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++config.h \
@@ -34,8 +34,7 @@
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h \
- /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/wchar2.h \
- /usr/include/c++/4.9/cstdint \
+ /usr/include/xlocale.h /usr/include/c++/4.9/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
  /usr/include/c++/4.9/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++allocator.h \
@@ -79,18 +78,14 @@
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/sigset.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/c++/4.9/cstdio \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/c++/4.9/cstdio /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/4.9/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/c++/4.9/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.9/bits/functional_hash.h \
  /usr/include/c++/4.9/bits/hash_bytes.h \
@@ -138,7 +133,7 @@
  /usr/include/c++/4.9/bits/ostream.tcc /usr/include/c++/4.9/istream \
  /usr/include/c++/4.9/bits/istream.tcc /usr/include/c++/4.9/sstream \
  /usr/include/c++/4.9/bits/sstream.tcc /usr/include/c++/4.9/cstring \
- /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string3.h \
+ /usr/include/string.h \
  /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Options.h \
  /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Socket.h \
  /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Message.h \
@@ -184,20 +179,6 @@
  /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Scavenger/ScavengerEnvironmentDisplay3D.h \
  /usr/include/c++/4.9/mutex /usr/include/c++/4.9/system_error \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/error_constants.h \
- /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h \
- /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgentModel.h \
- /usr/include/c++/4.9/cmath /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/huge_val.h \
- /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
- /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
- /usr/include/x86_64-linux-gnu/bits/inf.h \
- /usr/include/x86_64-linux-gnu/bits/nan.h \
- /usr/include/x86_64-linux-gnu/bits/mathdef.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathinline.h \
- /usr/include/c++/4.9/fstream /usr/include/c++/4.9/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++io.h \
- /usr/include/c++/4.9/bits/fstream.tcc
-00obj-o/cwpSecretAgent.o:
-	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/cwpSecretAgent.cpp -o $@
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Agent/Scavenger/ScavengerEnvironmentDriver.h
+00obj/Manual.o:
+	$(CXX) $(CXXFLAGS) -c $(LOCAL_SRC_DIR)/Manual.cpp -o $@

@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <cstring>
 #include <string>
+#include <map>
 
 namespace cwp {
 
@@ -37,12 +38,24 @@ namespace cwp {
 			std::string north, south, east, west;
 		};
 
+		class CellKey {
+		public:
+			CellKey(double x, double y);
+			void updateX(double x);
+			void updateY(double y);
+			double getX();
+			double getY();
+		private:
+			double x, y;
+		};
+
 		class SecretAgentModel {
 		public:
 			SecretAgentModel();
 			~SecretAgentModel();
-			void addCell(CellData* cell);
-			std::vector<CellData*> getCells();
+			// std::map<CellKey*, CellData*> getCells();
+			CellData* getCell(double x, double y);
+			void updateCell(std::string id, double x, double y, double z, std::string north, std::string south, std::string east, std::string west);
 			void updateCurrLocation(double x, double y, double z);
 			double getCurrX();
 			double getCurrY();
@@ -60,20 +73,9 @@ namespace cwp {
 
 		protected:
 		private:
-			std::vector<CellData*> known_cells;
+			std::map<CellKey, CellData*> known_cells;
 			int base_num;
 			double curr_x, curr_y, curr_z, charge, hit_points, goal_x, goal_y, goal_z;
-		};
-
-		class CellKey {
-		public:
-			CellKey(double x, double y);
-			void updateX(double x);
-			void updateY(double y);
-			double getX();
-			double getY();
-		private:
-			double x, y;
 		};
 
 		bool operator==(CellKey &lkey, CellKey &rkey);
