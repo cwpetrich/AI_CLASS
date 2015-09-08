@@ -53,7 +53,6 @@ namespace cwp {
 		public:
 			SecretAgentModel();
 			~SecretAgentModel();
-			// std::map<CellKey*, CellData*> getCells();
 			CellData* getCell(double x, double y);
 			void updateCell(std::string id, double x, double y, double z, std::string north, std::string south, std::string east, std::string west);
 			void updateCurrLocation(double x, double y, double z);
@@ -79,7 +78,7 @@ namespace cwp {
 		};
 
 		bool operator==(CellKey &lkey, CellKey &rkey);
-		// bool operator<=(CellKey &lkey, CellKey &rkey);
+		bool operator>=(CellKey &lkey, CellKey &rkey);
 		bool operator<(CellKey &lkey, CellKey &rkey);
 		
 	}

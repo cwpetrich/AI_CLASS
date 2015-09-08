@@ -46,10 +46,6 @@ namespace cwp {
 			return goal_z;
 		}
 
-		// std::map<CellKey*, CellData*> SecretAgentModel::getCells(){
-		// 	return known_cells;
-		// }
-
 		CellData* SecretAgentModel::getCell(double x, double y){
 			std::ofstream myfile;
 			myfile.open("debugging.txt", std::ofstream::out | std::ofstream::app);

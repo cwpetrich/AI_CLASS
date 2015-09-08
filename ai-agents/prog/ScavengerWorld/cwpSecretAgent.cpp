@@ -85,32 +85,6 @@ namespace cwp
 	        model->updateCell(percept->GetAtom(i).GetName().substr(5), cell_x, cell_y, cell_z, cell_north, cell_south, cell_east, cell_west);
         }
       }
-      // for (uint i = 0; i < percept->NumAtom(); i++){
-      // 	if (percept->GetAtom(i).GetName().substr(0,5) == "CELL_"){
-      // 		std::stringstream ss2;
-      //   	double cell_x, cell_y, cell_z;
-      // 		std::string cell_north, cell_south, cell_east, cell_west;
-
-      //   	std::string value = percept->GetAtom(i).GetValue();
-	     //    ss2.str(value); ss2.clear();
-	     //    ss2 >> cell_x; ss2.ignore();
-	     //    ss2 >> cell_y; ss2.ignore();
-	     //    ss2 >> cell_z; ss2.ignore();
-	     //    std::getline(ss2, cell_north, ',');
-	     //    std::getline(ss2, cell_south, ',');
-	     //    std::getline(ss2, cell_east, ',');
-	     //    std::getline(ss2, cell_west, ',');
-      // 		cwp::Scavenger::CellData* cell = model->getCell(cell_x, cell_y);
-      // 		std::ofstream myfile;
-		    //   myfile.open("debugging.txt", std::ofstream::out | std::ofstream::app);
-		    //   myfile << percept->GetAtom(i).GetName() << "\n";
-		    //   myfile << "north: " << cell->getCellNorth() << "\n";
-		    //   myfile << "east: " << cell->getCellEast() << "\n";
-		    //   myfile << "west: " << cell->getCellWest() << "\n";
-		    //   myfile << "south: " << cell->getCellEast() << "\n\n";
-		    //   myfile.close();
-      // 	}
-      // }
       double current_x, current_y;
       current_x = model->getCurrX();
       current_y = model->getCurrY();
@@ -132,103 +106,8 @@ namespace cwp
       }else{
         action->SetCode(ai::Scavenger::Action::QUIT);
       }
-        // }
-      // }
 
       return action;
-//       unsigned int i;
-
-//       for(i = 0; i < percept->NumAtom(); i++)
-//         {
-//           ai::Agent::PerceptAtom a = percept->GetAtom(i);
-//           if(std::strncmp(a.GetName().c_str(), "CELL_", 5) == 0)
-//             {
-//               int id;
-//               double x,y,z;
-
-//               std::sscanf(a.GetName().c_str(), "CELL_%d", &id);
-//               const char *v = a.GetValue().c_str();
-//               char *values = new char[std::strlen(v) + 1];
-//               std::strcpy(values, v);
-//               char *s = std::strtok(values, ",");
-//               std::sscanf(s, "%lf", &x);
-//               s = std::strtok(NULL, ",");
-//               std::sscanf(s, "%lf", &y);
-//               s = std::strtok(NULL, ",");
-//               std::sscanf(s, "%lf", &z);
-//               char *north = std::strtok(NULL, ",");
-//               char *south = std::strtok(NULL, ",");
-//               char *east  = std::strtok(NULL, ",");
-//               char *west  = std::strtok(NULL, ",");
-//               std::cout << id << " "
-//                         << x << "," << y << "," << z << "  "
-//                         << north << " "
-//                         << south << " "
-//                         << east << " "
-//                         << west << " "
-//                         << std::endl;
-//               delete [] values;
-//             }
-//           else
-//             {
-//               std::cout << a.GetName() << ": " << a.GetValue() << std::endl;
-//             }
-//         }
-
-// #if 0
-
-//       double x, y, z;
-
-//       x = atof(percept->GetAtom("X_LOC").GetValue().c_str());
-//       y = atof(percept->GetAtom("Y_LOC").GetValue().c_str());
-//       z = atof(percept->GetAtom("Z_LOC").GetValue().c_str());
-
-//       std::cout << x << ", " << y << ", " << z << std::endl;
-// #endif
-
-//       {
-//         int r = rand() % 2;
-//         int d = rand() % 4;
-//         if(r == 0)
-//           {
-//             switch(d)
-//               {
-//               case 0:
-//                 action->SetCode(ai::Scavenger::Action::GO_NORTH);
-//                 break;
-//               case 1:
-//                 action->SetCode(ai::Scavenger::Action::GO_SOUTH);
-//                 break;
-//               case 2:
-//                 action->SetCode(ai::Scavenger::Action::GO_EAST);
-//                 break;
-//               case 3:
-//                 action->SetCode(ai::Scavenger::Action::GO_WEST);
-//                 break;
-//               }
-//           }
-//         else
-//           {
-//             action->SetCode(ai::Scavenger::Action::LOOK);
-//             switch(d)
-//               {
-//               case 0:
-//                 action->SetDirection(ai::Scavenger::Location::NORTH);
-//                 break;
-//               case 1:
-//                 action->SetDirection(ai::Scavenger::Location::SOUTH);
-//                 break;
-//               case 2:
-//                 action->SetDirection(ai::Scavenger::Location::EAST);
-//                 break;
-//               case 3:
-//                 action->SetDirection(ai::Scavenger::Location::WEST);
-//                 break;
-//               }
-//           }
-//       }
-
-//       return action;
     }
   }
 }
