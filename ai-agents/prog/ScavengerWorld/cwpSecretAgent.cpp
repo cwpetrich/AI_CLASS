@@ -1,4 +1,6 @@
 #include "cwpSecretAgent.h"
+#include "cwpSecretAgentState.h"
+#include "cwpSecretAgentAction.h"
 #include <cmath>
 #include <cstdio>
 #include <cstring>
@@ -106,6 +108,10 @@ namespace cwp
       }else{
         action->SetCode(ai::Scavenger::Action::QUIT);
       }
+
+      // cwp::Scavenger::State * state = new cwp::Scavenger::State;
+      // cwp::Scavenger::Action * action2 = new ai::Scavenger::Action;
+      // state->updateXandY(1000, 2000);
 
       return action;
     }

@@ -195,6 +195,35 @@
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
+ /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgentState.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/ai_search.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Action.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/State.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/ActionStatePair.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Node.h \
+ /usr/include/c++/4.9/list /usr/include/c++/4.9/bits/stl_list.h \
+ /usr/include/c++/4.9/bits/list.tcc \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Problem.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Frontier.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/BFFrontier.h \
+ /usr/include/c++/4.9/queue /usr/include/c++/4.9/deque \
+ /usr/include/c++/4.9/bits/stl_deque.h \
+ /usr/include/c++/4.9/bits/deque.tcc /usr/include/c++/4.9/bits/stl_heap.h \
+ /usr/include/c++/4.9/bits/stl_queue.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/UCFrontier.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/DFFrontier.h \
+ /usr/include/c++/4.9/stack /usr/include/c++/4.9/bits/stl_stack.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/DLFrontier.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/GreedyFrontier.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/AStarFrontier.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Solution.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Algorithm.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Tree.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/ClosedList.h \
+ /usr/include/c++/4.9/set /usr/include/c++/4.9/bits/stl_set.h \
+ /usr/include/c++/4.9/bits/stl_multiset.h \
+ /home/conrad/Desktop/CS4300/aicode/ai/include/Search/Graph.h \
+ /home/conrad/Desktop/CS4300/aicode/ai-agents/prog/ScavengerWorld/cwpSecretAgentAction.h \
  /usr/include/c++/4.9/fstream /usr/include/c++/4.9/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++io.h \
