@@ -1,0 +1,23 @@
+#
+# get rid of unexpected files
+#
+*
+
+# except, keep .gitignore
+!.gitignore
+
+# keep known files
+!CandyDisplay
+!CandyServer
+!CCheckersDisplay
+!CCheckersServer
+!MancalaDisplay
+!MancalaServer
+!ScavengerData
+!ScavengerDisplay
+!ScavengerServer
+!ScavengerWorlds
+!TicTacToeDisplay
+!TicTacToeServer
+!WumpusDisplay
+!WumpusServer
