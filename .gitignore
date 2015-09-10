@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # emacs trash
 *~
 
@@ -13,3 +14,10 @@
 !bin/
 !include/
 !lib/
+=======
+*~
+*.o
+.depend*
+00obj*
+third
+>>>>>>> 2f6240fbdb013158a29eefe6cc18b833f9b135bd
